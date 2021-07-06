@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Scripts\0001-Create Sequences.sql" />
+    <None Remove="Scripts\0002-Create tables.sql" />
+    <None Remove="Scripts\0003-Create functions.sql" />
+    <None Remove="Scripts\0004-Create views.sql" />
+    <None Remove="Scripts\0005-Create data.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\0001-Create sequences.sql" />
+    <EmbeddedResource Include="Scripts\0005-Create data.sql" />
+    <EmbeddedResource Include="Scripts\0004-Create views.sql" />
+    <EmbeddedResource Include="Scripts\0003-Create functions.sql" />
+    <EmbeddedResource Include="Scripts\0002-Create tables.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup-postgresql" Version="4.5.0" />
+  </ItemGroup>
+
+</Project>
